@@ -17,16 +17,16 @@
         } 
         //Initialisation
         var nb_coup = 1;
-        var min = 1;
-        var max = 100;
+        var min = 5000;
+        var max = 50000;
         var nombre = 5;
         var nb = nb_aleatoire(min, max);
          
         while(nombre != nb) {
-        var nombre = prompt("Entrer un nombre [nombre de coup(s) : "+ nb_coup +"]" , "Nombre compris entre 1 et 100");
+        var nombre = prompt("Entrer un nombre [nombre de coup(s) : "+ nb_coup +"]" , "Prix compris entre 5000 € et 50000 €");
          
-        if(nombre == "Nombre compris entre 1 et 100") {//Si l(utilisateur appuis sur Ok sans rien entrer
-        alert("Entrer un nombre entre 1 est 100");
+        if(nombre == "Prix compris entre 5000 € et 50000 €") {//Si l(utilisateur appuis sur Ok sans rien entrer
+        alert("Veuillez entrer un prix entre 5000€ et 50000€");
         continue;
         }
         if(nombre == null) {//Si on appuie sur annuler
@@ -36,11 +36,11 @@
         alert("\"" + nombre + "\" n'est pas un nombre");
         continue;
         }
-        if(nombre < 1) {//Nombre trop petit
+        if(nombre < min) {//Nombre trop petit
         alert(+ nombre + " est trop petit !");
         continue;
         }
-        if(nombre > 100) {//Nombre trop grand
+        if(nombre > max) {//Nombre trop grand
         alert(+ nombre + " est trop grand !");
         continue;
         }
@@ -53,7 +53,7 @@
         nb_coup ++;
         }
         if(nombre == nb) {//Si gagné
-        alert("Bravo le prix était "+nb+ ".");
+        alert("Bravo le prix était de "+nb+ "€ .");
         break;
         }
         }
